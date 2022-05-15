@@ -1,0 +1,2 @@
+class CreateAono < ApplicationRecord
+end

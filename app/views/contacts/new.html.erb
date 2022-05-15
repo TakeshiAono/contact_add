@@ -1,0 +1,28 @@
+<%= form_with(model:@aono, 
+local: true
+# url:contacts_path
+) do |form| %>
+
+<% if @aono.errors.any? %>
+    <div>
+        <h2><%= @aono.errors.count %>件のエラーがあります。</h2>
+        <%@aono.errors.full_messages.each do |msg|%>
+          <li>
+            <%= msg%>
+          </li>
+        <% end %>
+    </div>
+<% end %>
+
+  <%= form.label :name%>
+  <%= form.text_field :name %>
+  <br>
+  <%= form.label :email%>
+  <%= form.text_field :email %>
+  <br>
+  <%= form.label :content%>
+  <%= form.text_field :content %>
+  <br>
+  <%= form.submit%>
+  <%= link_to 'indexに戻る', contacts_path %>
+<%end%>
